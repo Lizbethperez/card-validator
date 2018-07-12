@@ -9,12 +9,11 @@
 **Nuestro producto final debe validar:**
 
 * El nombre del usuario.
-* Que el número de la tarjeta tenga solo 16 dígitos
-* Que no acepte letras.
-* Que no acepte espacios ni caracteres especiales.
+* Que el número de la tarjeta tenga solo 16 dígitos, no acepte letras y no acepte espacios ni caracteres especiales.
+* Una vez corroborado lo anterior, se verifica a través del algoritmo de Luhn que el número de tarjeta ingresado sea válido.
 * La fecha de expiración de la tarjeta de crédito en donde en la primer casilla de verificación solo acepte 2 dígitos del *"01"* al *"12"* y en la segunda casilla que no acepte letras, cáracteres especiales ni espacios.
 * Que el código de verificación acepte solo tres dígitos, y que no acepte letras, cáracteres especiales ni espacios.
-* Si todas las validacionesson correctas aparecera en el navegador el mensaje *"Tarjeta válida"* y se podrá hacer click en *pagar*.
+* Si todas las validaciones son correctas aparecerá en el navegador el mensaje *"Tarjeta válida"* y se podrá hacer click en *pagar*.
 
 *** 
 
@@ -31,6 +30,8 @@ El usuario debera ingresar:
 ***
 
 # Instrucciones para uso de la librería.
+
+AQUI DEBE HABER ALGO DE LAS LIBRERIAS Y ASI
 
 El plugin debe recibir una referencia a un elemento del DOM que contenga
 `<input>`s con los siguientes nombres (atributo `name`):
@@ -52,7 +53,7 @@ Casi todos alguna vez hemos utilizado alguna tarjeta de crédito para realizar u
 Como sabes, estas tarjetas cuentan con ciertas numeraciones tales como el nombre del titular de la tarjeta (persona autorizada para dar uso de ella), la numeración principal que cuenta con 16 dígitos, la fecha de expiración contando con el mes y el año y un código de seguridad.
 En este reto crearemos un “validador de tarjetas de crédito” que ayudara a las empresas en linea a aceptar el pago de sus productos o servicios a través de este sistema.
 
-## Investigación.
+# Investigación.
 
 ¿Cuál es el método de validación de una Tarjeta de Crédito?
 
@@ -60,7 +61,7 @@ En este reto crearemos un “validador de tarjetas de crédito” que ayudara a 
 
 La mayoría de las tarjetas de crédito se validan mediante el algoritmo de Luhn.
 
-### Algoritmo de Luhn.
+## Algoritmo de Luhn.
 
 El algoritmo de Luhn o fórmula de Luhn, también conocida como "algoritmo de módulo 10", es una fórmula de suma de verificación, utilizada para validar una diversidad de números de identificación; como números de tarjetas de crédito, números IMEI, etc.
 Este algoritmo fue creado por el científico de IBM llamado Hans Peter Luhn y descrito en la patente U.S. Patent No. 2,950,048, solicitada el 6 de enero de 1954, y concedida el 23 de agosto de 1960.
@@ -93,7 +94,7 @@ El resultado es el dígito de chequeo.
 Entonces, el número de cuenta completo es 79927398713.
 
 
-### ¿Qué procede?
+## ¿Qué procede?
 
 Una vez comprobado el dígito de validación por medio del algoritmo y definida como una Tarjeta de Crédito Valida, se procede a separar los componentes del número de tarjeta de la siguiente manera:
 
@@ -110,3 +111,5 @@ Una tarjeta de crédito, está conformada por los siguientes componentes a part
 ![credit-card](/assets/image/tarjeta-de-credito.jpg)
 
 ## DEMO:
+
+AQUI VA EL DEMO 
