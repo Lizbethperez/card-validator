@@ -1,6 +1,49 @@
-# Validando tarjetas de crédito.
+# Valida datos de tarjetas de crédito
 
-## Introducción.
+* **Integrantes de equipo** _Lizbeth Pérez. Karla Martínez_ 
+* **Curso:** _JS DEEP DIVE: CREA TU PROPIA LIBRERÍA USANDO JAVASCRIPT_
+* **Unidad:** _Producto final_
+
+## ¿Cómo funciona?
+
+Nuestro producto final debe validar:
+
+* El nombre del usuario.
+* Que el número de la tarjeta tenga solo 16 dígitos
+* Que no acepte letras.
+* Que no acepte espacios ni caracteres especiales.
+* La fecha de expiración de la tarjeta de crédito en donde en la primer casilla de verificación solo acepte 2 dígitos del *"01"* al *"12"* y en la segunda casilla que no acepte letras, cáracteres especiales ni espacios.
+* Que el código de verificación acepte solo tres dígitos, y que no acepte letras, cáracteres especiales ni espacios.
+* Si todas las validacionesson correctas aparecera en el navegador el mensaje *"Tarjeta válida"* y se podrá hacer click en *pagar*.
+
+*** 
+
+# Instrucciones para Usuario.
+
+El usuario debera ingresar:
+
+* `Nombre de titular de tarjeta`
+* `Número de tarjeta` _Que contenga sólo 16 dígitos_
+* `Fecha de vencimiento` _Mes y año_
+* `Código de seguridad` _De tres dígitos_
+* `Click en botón "pagar"` _Para realizar la transacción_
+
+***
+
+# Instrucciones para uso de la librería.
+
+El plugin debe recibir una referencia a un elemento del DOM que contenga
+`<input>`s con los siguientes nombres (atributo `name`):
+
+* `cn` (Card Number): El número de la tarjeta de crédito
+* `exp` (Expiry Date): Fecha de expiración
+* `cvv` (Card Verification Value): Código de validación de 3 dígitos
+* `name`: Nombre completo como aparece en la tarjeta
+
+
+*** 
+
+# Introducción.
 
 Casi todos alguna vez hemos utilizado alguna tarjeta de crédito para realizar una compra. 
 
@@ -66,86 +109,4 @@ Una tarjeta de crédito, está conformada por los siguientes componentes a part
 
 ![credit-card](/assets/image/tarjeta-de-credito.jpg)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Valida datos de tarjetas de crédito
-
-* **Track:** _Common Core_
-* **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_
-* **Unidad:** _Producto final_
-
-***
-
-El plugin debe recibir una referencia a un elemento del DOM que contenga
-`<input>`s con los siguientes nombres (atributo `name`):
-
-* `cn` (Card Number): El número de la tarjeta de crédito
-* `exp` (Expiry Date): Fecha de expiración
-* `cvv` (Card Verification Value): Código de validación de 3 dígitos
-* `name`: Nombre completo como aparece en la tarjeta
-
-## Ejemplo
-
-```html
-<form>
-  <div class="form-group">
-    <label for="cn">Número de tarjeta</label>
-    <input id="cn" name="cn" />
-  </div>
-  <div class="form-group">
-    <label for="exp">Fecha de vencimiento</label>
-    <input id="exp" name="exp" />
-  </div>
-  <div class="form-group">
-    <label for="cvv">CVV</label>
-    <input id="cvv" name="cvv" />
-  </div>
-  <div class="form-group">
-    <label for="name">Nombre completo</label>
-    <input id="name" name="name" />
-  </div>
-  <input type="submit" value="Pagar" />
-</form>
-```
-
-```js
-const form = document.querySelector('form');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (validateCardDetails(form)) {
-    console.log('datos válido... enviar...');
-  } else {
-    console.log('datos inválidos');
-  }
-});
-```
-
-A la hora de hacer las validaciones, la librería debería de añadir la clase
-`.error` a los `<input>`s que no pasen la validación, o la clase `.success`
-en caso de que sí pase.
+## DEMO:
