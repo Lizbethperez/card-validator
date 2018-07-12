@@ -1,3 +1,40 @@
+# Validando tarjetas de crédito.
+
+## Introducción
+
+Casi todos alguna vez hemos utilizado alguna tarjeta de crédito para realizar una compra. 
+
+![compra-tarjeta](/assets/image/tarjetas2.jpg)
+
+Como sabes, estas tarjetas cuentan con ciertas numeraciones tales como el nombre del titular de la tarjeta (persona autorizada para dar uso de ella), la numeración principal que cuenta con 16 dígitos, la fecha de expiración contando con el mes y el año y un código de seguridad.
+En este reto crearemos un “validador de tarjetas de crédito” que ayudara a las empresas en linea a aceptar el pago de sus productos o servicios a través de este sistema.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Valida datos de tarjetas de crédito
 
 * **Track:** _Common Core_
