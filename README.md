@@ -6,7 +6,7 @@
 
 ## ¿Cómo funciona?
 
-Nuestro producto final debe validar:
+**Nuestro producto final debe validar:**
 
 * El nombre del usuario.
 * Que el número de la tarjeta tenga solo 16 dígitos
