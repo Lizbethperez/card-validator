@@ -64,7 +64,7 @@ El ultimo dígito, se conoce como dígito de control o dígito de validación, e
 
 Una tarjeta de crédito, está conformada por los siguientes componentes a parte del Número de Tarjeta: Nombre de la entidad Emisora, Red Nacional, Red Internacional, Chip de Seguridad, Fecha de Caducidad, Nombre del Titular, Firma del titular, CódigoCVV2 o CVC2 o CID y Banda Magnética.
 
-![credit-card](/assets/image/tarjetas-de-credito.jpg)
+![credit-card](/assets/image/tarjeta-de-credito.jpg)
 
 
 
