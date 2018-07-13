@@ -78,6 +78,15 @@ const convertStringToArray = (string)=>{
     else 
        console.log('tarjeta Invalida');
 }
-cardNumber(creditNumber);
+//FUNCIÓN QUE VALIDA EL NOMBRE DEL USUARIO
+const validateUserName = (receiveUserName) => {
+    const regexUserName = /^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$/
+    if (regexUserName.exec(receiveUserName) == null) { 
+        console.log("Invalido");
+    } else {
+        console.log("valido"); 
+    }
 
-hola
+}
+
+validateUserName(nameUser);
