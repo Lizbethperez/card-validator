@@ -84,7 +84,7 @@ const validateUserName = (receiveUserName) => {
     if (regexUserName.exec(receiveUserName) == null) { 
         console.log("Invalido");
     } else {
-        console.log("valido");
+        console.log("valido"); 
     }
 
 }
