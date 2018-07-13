@@ -38,18 +38,22 @@ MASTER CARD= EMPIEZA CON 5
 */
 
 const validateNumbers = (dataValidate)=>{
-  let arrayCreditNumber=[];
   const regexNumberCard= /^(?:4\d([\- ])?\d{6}\1\d{5}|(?:4\d{3}|5[1-5]\d{2}|6011)([\- ])?\d{4}\2\d{4}\2\d{4})$/; //Expresion regualar para validar
   if(regexNumberCard.exec(dataValidate)== null){ // compara la expresion regular con el numero de tarjeta Ingresado.
       console.log("Invalido");
   }else {
       console.log("valido");
-      for(let i=0;i<dataValidate.length;i++){
-        arrayCreditNumber.push(parseInt(dataValidate[i]));
-      }
-      luhnValidate(arrayCreditNumber)   
-  }
+      convertStringToArray(dataValidate);   
+    }
 
+}
+//FUNCION QUE COLOCA CADA NUMERO INGRESADO POR EL USUARIO EN UN ARRAY Y LO CONVIERTE A ENTERO. 
+const convertStringToArray = (string)=>{
+    let arrayCreditNumber=[];
+    for(let i=0;i<string.length;i++){
+        arrayCreditNumber.push(parseInt(string[i]));
+      }
+      luhnValidate(arrayCreditNumber);
 }
 
 //FUNCION QUE LA TARJETA SE UNA TARJETA VALIDA A TRAVES DEL ALGORITMO DE LUHN 
@@ -67,7 +71,7 @@ const validateNumbers = (dataValidate)=>{
                 arrayReverseCreditCard[j]=multiplyPar;
             }
        }
-       sumDigitsArray += arrayReverseCreditCard[j];  
+      console.log( sumDigitsArray += arrayReverseCreditCard[j]);  
     }
     if(sumDigitsArray%10===0)
         console.log('tarjeta valida');
