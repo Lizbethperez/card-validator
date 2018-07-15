@@ -120,4 +120,26 @@ const compareAllData = (receiveNameForUser,reciveCreditNumberForUser)=>{
         }     
     }
 }
+
+const dataIteration= () => {
+    for (let i = 0; i < data.clients.length; i++) {
+        let currentClient = data.clients[i];
+        let inputMonth = "05";
+        let inputYear = "22";
+        let isMonthValid = isInputMonthEqualDataMonth(inputMonth, currentClient["exp-month"]);
+        let isYearValid = isInputYearEqualDataYear(inputYear, currentClient["exp-year"]);
+
+        if(!isMonthValid || !isYearValid){
+            continue;
+        }
+    }
+}
+
+const isInputMonthEqualDataMonth = (inputMonth, dataMonth) => {
+    return parseInt(inputMonth) === parseInt(dataMonth);
+}
+
+const isInputYearEqualDataYear = (inputYear, dataYear) => {
+    return parseInt(inputYear) === parseInt(dataYear);
+}
 compareAllData(nameUser,creditNumber);
