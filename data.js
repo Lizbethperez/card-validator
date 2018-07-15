@@ -1,5 +1,4 @@
-const data = {
-  'clients':[
+const clients = [
       {
       'name':'berenice Galvan Lopez',
       'creditNumber':4365775241079571,
@@ -36,5 +35,4 @@ const data = {
         'exp-year':25
       },
 
-  ] 
-}
+  ]
