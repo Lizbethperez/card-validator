@@ -1,41 +1,34 @@
-const dataClients =[
-        {
-        'name':'Carolina Fernandez',
-        'creditNumber':"4791672372586571",
-        'cvv': "1234",
-        'exp-month':12,
-        'exp-year':18
-      },
-      {
-          'name':'Carolina Perez',
-          'creditNumber':'4791672372586571',
-          'cvv': 456,
-          'exp-month':05,
-          'exp-year':22
-        },
-        {
-        'name':'Orlando Garcia Morales',
-        'creditNumber':'4791672372586578',
+const dataClients = [
+    {
+        'name': 'Carolina Fernandez',
+        'creditNumber': "4791672372586571",
+        'cvv': 123,
+        'exp-month': 12,
+        'exp-year': 18
+    },
+    {
+        'name': 'Carolina Perez',
+        'creditNumber': '4791672372586571',
         'cvv': 456,
-        'exp-month':05,
-        'exp-year':22
-      },
-      {
-        'name':'Orlando Garcia Mora',
-        'creditNumber':'4791672372586579',
-        'cvv': "123",
-        'exp-month':09,
-        'exp-year':23
-      }
-    ];
+        'exp-month': 05,
+        'exp-year': 22
+    },
+    {
+        'name': 'Orlando Garcia Mora',
+        'creditNumber': '4791672372586579',
+        'cvv': 123,
+        'exp-month': 09,
+        'exp-year': 23
+    }
+];
 
 // DATOS INGRESADOS POR EL USUARIO.
 
-const nameUser="Orlando Garcia Mora";
-const cvvUser= "124";
-const inputMonth=("09");
-const inputYear=("23");
-const creditNumber=("4791672372586579");
+const nameUser = "Orlando Garcia Mora";
+const cvvUser = "123";
+const inputMonth = ("09");
+const inputYear = ("23");
+const creditNumber = ("4791672372586579");
 //console.log(creditNumber);
 
 
@@ -44,22 +37,23 @@ const creditNumber=("4791672372586579");
 //FUNCIÓN QUE VALIDA EL NOMBRE DEL USUARIO
 const validateUserName = (receiveUserName) => {
     const regexUserName = /^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$/
-    if(regexUserName.exec(receiveUserName) != null)
-     return true;
-     else
-       return false;
+    if (regexUserName.exec(receiveUserName) != null)
+        return true;
+    else
+        return false;
+
 }
 
-const validateCvvNumber = (receiveCvvNumber)=> {
-    const regexCvvNumber =/^[0-9]{3,4}$/;
-    if(regexCvvNumber.exec(receiveCvvNumber) == null){
+const validateCvvNumber = (receiveCvvNumber) => {
+    const regexCvvNumber = /^[0-9]{3}$/;
+    if (regexCvvNumber.exec(receiveCvvNumber) == null) {
         console.log("EL CVV ES INVALIDO");
         return false;
-    }else{
+    } else {
         console.log("EL CVV ES VALIDO");
         return true;
     }
-      
+
 }
 
 /*Funcion que valida Que Solo se Ingresen Digitos del 0 al 9 y que sean 16 digitos 
@@ -68,101 +62,100 @@ VISA = EMPIEZA CON 4
 MASTER CARD= EMPIEZA CON 5
 */
 
-const validateNumbersCreditCard = (dataValidate)=>{
-    const regexNumberCard= /^(?:4\d([\- ])?\d{6}\1\d{5}|(?:4\d{3}|5[1-5]\d{2}|6011)([\- ])?\d{4}\2\d{4}\2\d{4})$/; //Expresion regualar para validar
-    if(regexNumberCard.exec(dataValidate) === null){ // compara la expresion regular con el numero de tarjeta Ingresado.
+const validateNumbersCreditCard = (dataValidate) => {
+    const regexNumberCard = /^(?:4\d([\- ])?\d{6}\1\d{5}|(?:4\d{3}|5[1-5]\d{2}|6011)([\- ])?\d{4}\2\d{4}\2\d{4})$/; //Expresion regualar para validar
+    if (regexNumberCard.exec(dataValidate) === null) { // compara la expresion regular con el numero de tarjeta Ingresado.
         return false;
-    }else {
-        console.log("Tarjeta valida por luhn");
-        return convertStringToArray(dataValidate);   
-      }
-  
-  }
-  //VALIDANDO TARJETA DE CREDITO CON LUHN
+    } else {
+        console.log("Tarjeta sin cosas raras");
+        return convertStringToArray(dataValidate);
+    }
+
+}
+//VALIDANDO TARJETA DE CREDITO CON LUHN
 
 //FUNCION QUE COLOCA CADA NUMERO INGRESADO POR EL USUARIO EN UN ARRAY Y LO CONVIERTE A ENTERO. 
-const convertStringToArray = (string)=>{
-    let arrayCreditNumber=[];
-    for(let i=0;i<string.length;i++){
+const convertStringToArray = (string) => {
+    let arrayCreditNumber = [];
+    for (let i = 0; i < string.length; i++) {
         arrayCreditNumber.push(parseInt(string[i]));
-      }
-     return luhnValidate(arrayCreditNumber);
+    }
+    return luhnValidate(arrayCreditNumber);
 }
 
 //FUNCION QUE LA TARJETA SE UNA TARJETA VALIDA A TRAVES DEL ALGORITMO DE LUHN 
-  const luhnValidate =(validateCardNumber)=>{
-    let sumDigitsArray=0;
-    let arrayReverseCreditCard=validateCardNumber.reverse();
-    for(let j=0;j<arrayReverseCreditCard.length;j++){
-       let multiplyPar=0;
-       if((j+1)%2===0){
-            multiplyPar=arrayReverseCreditCard[j]*2;
-            if(multiplyPar>=10){
-                let sumDigits=(multiplyPar-10)+1;
-                arrayReverseCreditCard[j]=sumDigits;
-            }else{
-                arrayReverseCreditCard[j]=multiplyPar;
+const luhnValidate = (validateCardNumber) => {
+    let sumDigitsArray = 0;
+    let arrayReverseCreditCard = validateCardNumber.reverse();
+    for (let j = 0; j < arrayReverseCreditCard.length; j++) {
+        let multiplyPar = 0;
+        if ((j + 1) % 2 === 0) {
+            multiplyPar = arrayReverseCreditCard[j] * 2;
+            if (multiplyPar >= 10) {
+                let sumDigits = (multiplyPar - 10) + 1;
+                arrayReverseCreditCard[j] = sumDigits;
+            } else {
+                arrayReverseCreditCard[j] = multiplyPar;
             }
-       }
-        sumDigitsArray += arrayReverseCreditCard[j];  
+        }
+        sumDigitsArray += arrayReverseCreditCard[j];
+
     }
-    if(sumDigitsArray%10===0){
-       console.log('tarjeta aprobada  por luhn');
-       return true;
-    }else 
+    if (sumDigitsArray % 10 === 0) {
+        console.log('tarjeta aprobada  por luhn');
+        return true;
+    } else
         return false;
 }
 
 //COMPARACION DE DATOS DE USUARIO Y DATOS EN LA DATA REGISTRADA
 
-const compareName = (getUserName, dataName)=>{
-    if(dataName === getUserName){
-       console.log(getUserName);
-       return true
-     } else{
-      console.log('nombreInvalido');
-      return false;
-    }
+const compareName = (getUserName, dataName) => {
+    return dataName === getUserName;
 }
 
-const compareCreditNumber =(numberCreditVaidateForLuhn,dataCreditNumber) =>{
+const compareCreditNumber = (numberCreditVaidateForLuhn, dataCreditNumber) => {
     console.log(numberCreditVaidateForLuhn);
     console.log(dataCreditNumber);
-    if(numberCreditVaidateForLuhn == dataCreditNumber){
+    if (numberCreditVaidateForLuhn == dataCreditNumber) {
         console.log("EL NUMERO DE TARJETA ES IGUAL A DATA");
         return true;
     }
-     else 
-       return false;
-}
-
-const compareCvvNumber = (getCvvNumber,dataCvv) =>{
-     if(getCvvNumber===dataCvv){
-     console.log(getCvvNumber);
-       return true;
-     }else{
+    else
         return false;
-     }      
 }
 
-const compareAllData = (receiveNameForUser,reciveCreditNumberForUser,inputMonth,inputYear,receiveCvvForUser)=>{
-    if(!validateUserName(receiveNameForUser)||!validateNumbersCreditCard(reciveCreditNumberForUser)||!validateCvvNumber(receiveCvvForUser))
-       return;
-    for(let k=0;k<dataClients.length;k++){
-        let currentClient= dataClients[k];
-        if(!compareName(receiveNameForUser, currentClient.name))
-          continue;
+const compareCvvNumber = (getCvvNumber, dataCvv) => {
+    if (parseInt(getCvvNumber) === dataCvv) {
+        console.log(getCvvNumber);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+const compareAllData = (receiveNameForUser, reciveCreditNumberForUser, inputMonth, inputYear, receiveCvvForUser) => {
+    if (!validateUserName(receiveNameForUser) || !validateNumbersCreditCard(reciveCreditNumberForUser) || !validateCvvNumber(receiveCvvForUser))
+        return;
+    for (let k = 0; k < dataClients.length; k++) {
+        let currentClient = dataClients[k];
+        
+        if (!compareName(receiveNameForUser, currentClient.name)){
+            continue;
+        }
+        
         let isMonthValid = isInputMonthEqualDataMonth(inputMonth, currentClient["exp-month"]);
         let isYearValid = isInputYearEqualDataYear(inputYear, currentClient["exp-year"]);
-        if(!compareCreditNumber(reciveCreditNumberForUser,currentClient.creditNumber)||!isMonthValid || !isYearValid || !compareCvvNumber(receiveCvvForUser,currentClient.cvv))
-           break;
+
+        if (!compareCreditNumber(reciveCreditNumberForUser, currentClient.creditNumber) || !isMonthValid || !isYearValid || !compareCvvNumber(receiveCvvForUser, currentClient.cvv))
+            break;
         else
-          return true;   
+            return true;
     }
 }
 
 const isInputMonthEqualDataMonth = (inputMonth, dataMonth) => {
-    console.log("el mes es ", parseInt(inputMonth) === parseInt(dataMonth))
+    console.log("el mes es a", parseInt(inputMonth) === parseInt(dataMonth))
     return parseInt(inputMonth) === parseInt(dataMonth);
 }
 
@@ -170,4 +163,4 @@ const isInputYearEqualDataYear = (inputYear, dataYear) => {
     return parseInt(inputYear) === parseInt(dataYear);
 }
 
-compareAllData(nameUser,creditNumber,inputMonth, inputYear, cvvUser);
+compareAllData(nameUser, creditNumber, inputMonth, inputYear, cvvUser);
