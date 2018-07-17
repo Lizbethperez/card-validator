@@ -23,7 +23,7 @@ const dataClients =[
       {
         'name':'Orlando Garcia Mora',
         'creditNumber':'4791672372586579',
-        'cvv': "123",
+        'cvv': 123,
         'exp-month':09,
         'exp-year':23
       }
@@ -32,7 +32,7 @@ const dataClients =[
 // DATOS INGRESADOS POR EL USUARIO.
 
 const nameUser="Orlando Garcia Mora";
-const cvvUser= "124";
+const cvvUser= "123";
 const inputMonth=("09");
 const inputYear=("23");
 const creditNumber=("4791672372586579");
@@ -137,7 +137,7 @@ const compareCreditNumber =(numberCreditVaidateForLuhn,dataCreditNumber) =>{
 }
 
 const compareCvvNumber = (getCvvNumber,dataCvv) =>{
-     if(getCvvNumber===dataCvv){
+     if(parseInt(getCvvNumber)===dataCvv){
      console.log(getCvvNumber);
        return true;
      }else{
