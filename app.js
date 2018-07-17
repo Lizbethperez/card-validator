@@ -16,7 +16,7 @@ const dataClients = [
     {
         'name': 'Orlando Garcia Mora',
         'creditNumber': '4791672372586579',
-        'cvv': "123",
+        'cvv': 123,
         'exp-month': 09,
         'exp-year': 23
     }
