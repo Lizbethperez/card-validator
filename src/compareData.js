@@ -54,4 +54,4 @@ compareImport.compareCvvNumber = (getCvvNumber) => {
     console.log("fallo el cvv");
     return false;
 }
-export default compareImport;
+module.exports = compareImport;

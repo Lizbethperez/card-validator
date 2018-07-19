@@ -1,4 +1,4 @@
-const validations = require('./validate');
+const validations = require('../dist/validate');
 
   describe("validateAllData()",()=>{
     it('debería devolver true para el nombre Orlando Garcia Mora', () => {

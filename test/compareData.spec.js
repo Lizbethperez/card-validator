@@ -1,7 +1,7 @@
 
 
-const compareImport = require('./compareData');
-
+const compareImport = require('../dist/compareData');
+console.log(compareImport);
    describe("compareImport()",()=>{
     it('debería devolver true para el nombre Orlando Garcia Mora', () => {
       if (compareImport.compareName('Orlando Garcia Mora') !== true) {
