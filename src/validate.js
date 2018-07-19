@@ -66,11 +66,37 @@ validations.validateNumbersCreditCard = (dataValidate) => {
     }
         
 }
+// VALIDA FECHA DE EXPIRACION (MES)
 
+validations.validateMonth = month => {
+    const validMonthRegEx = /^(0[0-9]|1[0-2])$/;
+    if (validMonthRegEx.exec(month) === null){
+        console.log('mes invalido');
+        return false;
+    }else{
+        console.log('mes valido');
+        return true;
+    }
+}
+
+//VALIDA FECHA DE EXPIRACION (AÑO)
+
+validations.validateYear = year => {
+    const validYearRegEx = /^(20)?([0-9]{2})$/;
+    if (validYearRegEx.exec(year) === null){
+        console.log('año invalido');
+        return false;
+    }else{
+        console.log('año valido');
+        return true;
+    }
+}
+
+//VALIDA EL CVV
 validations.validateCvvNumber = (receiveCvvNumber) => {
     console.log("numero de CVV RECIBIDO"+receiveCvvNumber);
     const regexCvvNumber = /^[0-9]{3}$/;
-    if (regexCvvNumber.exec(receiveCvvNumber) == null) {
+    if (regexCvvNumber.exec(receiveCvvNumber) === null) {
         console.log("EL CVV ES INVALIDO");
         return false;
     } else {

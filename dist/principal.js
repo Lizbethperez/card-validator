@@ -11,7 +11,7 @@ var _compareData2 = _interopRequireDefault(_compareData);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var compareAllData = function compareAllData(receiveNameForUser, reciveCreditNumberForUser, inputMonth, inputYear, receiveCvvForUser) {
-    if (!_validate2.default.validateUserName(receiveNameForUser) || !_validate2.default.validateNumbersCreditCard(reciveCreditNumberForUser) || !_validate2.default.validateCvvNumber(receiveCvvForUser)) {
+    if (!_validate2.default.validateUserName(receiveNameForUser) || !_validate2.default.validateNumbersCreditCard(reciveCreditNumberForUser) || !_validate2.default.validateMonth(inputMonth) || !_validate2.default.validateYear(inputYear) || !_validate2.default.validateCvvNumber(receiveCvvForUser)) {
         console.log("TARJETA INVALIDAooo");
         return;
     }
@@ -22,4 +22,4 @@ var compareAllData = function compareAllData(receiveNameForUser, reciveCreditNum
     console.log("TARJETA VALIDA");
     return true;
 };
-compareAllData('Orlando Garcia Mora', "4791672372586579", "1", "23", "883");
+compareAllData('Orlando Garcia Mora', "4791672372586579", "01", "23", "883");
