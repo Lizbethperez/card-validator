@@ -32,14 +32,14 @@ console.log(compareImport);
           }
         });
         it('debería devolver true para el mes 09', () => {
-            if (compareImport.isInputMonthEqualDataMon('09') !== true) {
+            if (compareImport.isInputMonthEqualDataMonth('09') !== true) {
               console.error('✗ fail');
             } else {
               console.log('✓ ok');
             }
           });
           it('debería devolver false el mes g6', () => {
-              if (compareImport.isInputMonthEqualDataMon('g6') !== true) {
+              if (compareImport.isInputMonthEqualDataMonth('g6') !== true) {
                 console.error('✗ fail');
               } else {
                 console.log('✓ ok');

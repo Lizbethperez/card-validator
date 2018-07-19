@@ -14,4 +14,4 @@ const compareAllData = (receiveNameForUser, reciveCreditNumberForUser, inputMont
     return true;
       
 }
-compareAllData('Orlando Garcia Mora', "4791672372586579","1","23","883");
+compareAllData('Orlando Garcia Mora', "4791672372586579","01","23","883");
