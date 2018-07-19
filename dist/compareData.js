@@ -1,9 +1,5 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
 var _dataClients = require("./dataClients");
 
 var dataImports = _interopRequireWildcard(_dataClients);
@@ -59,4 +55,4 @@ compareImport.compareCvvNumber = function (getCvvNumber) {
     console.log("fallo el cvv");
     return false;
 };
-exports.default = compareImport;
+module.exports = compareImport;

@@ -23,7 +23,7 @@ compareImport.creditNumber = (numberCreditVaidateForLuhn) => {
     console.log("fallo creditnumber");
     return false;
 }
-compareImport.isInputMonthEqualDataMonth = (inputMonth) => {
+compareImport.isInputMonthEqualDataMonth= (inputMonth) => {
     for(let k=0; k< dataImports.dataClients.length;k++){
         let dataMonth=dataImports.dataClients[k]['exp-month'];
         if(parseInt(inputMonth) === parseInt(dataMonth))
@@ -33,7 +33,7 @@ compareImport.isInputMonthEqualDataMonth = (inputMonth) => {
     return false;
 }
 
-compareImport.isInputYearEqualDataYear = (inputYear) => {
+compareImport.isInputYearEqualDataYear= (inputYear) => {
     for(let k=0; k< dataImports.dataClients.length;k++){
         let dataYear= dataImports.dataClients[k]['exp-year'];
         console.log(inputYear);
@@ -54,4 +54,4 @@ compareImport.compareCvvNumber = (getCvvNumber) => {
     console.log("fallo el cvv");
     return false;
 }
-export default compareImport;
+module.exports = compareImport;

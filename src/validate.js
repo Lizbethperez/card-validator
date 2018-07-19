@@ -104,5 +104,4 @@ validations.validateCvvNumber = (receiveCvvNumber) => {
         return true;
     }
 }
-
-export default  validations;
+module.exports= validations;
