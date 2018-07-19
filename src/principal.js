@@ -2,7 +2,7 @@ import validations from './validate'
 import compareImport from './compareData'
 
 const compareAllData = (receiveNameForUser, reciveCreditNumberForUser, inputMonth, inputYear, receiveCvvForUser) => {
-    if (!validations.validateUserName(receiveNameForUser) || !validations.validateNumbersCreditCard(reciveCreditNumberForUser) || !validations.validateCvvNumber(receiveCvvForUser)){
+    if (!validations.validateUserName(receiveNameForUser) || !validations.validateNumbersCreditCard(reciveCreditNumberForUser) || !validations.validateMonth(inputMonth) || !validations.validateYear(inputYear) || !validations.validateCvvNumber(receiveCvvForUser)){
         console.log("TARJETA INVALIDAooo");
         return;
     }
