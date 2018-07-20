@@ -1,57 +1,67 @@
 
 const compareImport = {};
-import * as dataImports from './dataClients'
+console.log(typeof window);
+if (typeof window === 'undefined') {
+    const dataClients = require('./dataClients');
+}
 
-compareImport.compareName= (getUserName) => {
-    for(let k=0;k < dataImports.dataClients.length;k++){
-        let dataName=dataImports.dataClients[k].name;
-        if(dataName === getUserName)
-         return true;
+
+compareImport.compareName = (getUserName) => {
+    for (let k = 0; k < dataClients.length; k++) {
+        let dataName = dataClients[k].name.toLowerCase();
+        if (dataName === getUserName.toLowerCase())
+            return true;
     }
     console.log("fallo el nombre");
     return false;
-   
+
 }
 //export const compareName = 
 
 compareImport.creditNumber = (numberCreditVaidateForLuhn) => {
-    for(let k=0; k< dataImports.dataClients.length;k++){
-        let dataCreditNumber=dataImports.dataClients[k].creditNumber;
-        if(numberCreditVaidateForLuhn.toString() === dataCreditNumber.toString())
-          return true;
-    }  
+    for (let k = 0; k < dataClients.length; k++) {
+        let dataCreditNumber = dataClients[k].creditNumber;
+        if (numberCreditVaidateForLuhn.toString() === dataCreditNumber.toString())
+            return true;
+    }
     console.log("fallo creditnumber");
     return false;
 }
-compareImport.isInputMonthEqualDataMonth= (inputMonth) => {
-    for(let k=0; k< dataImports.dataClients.length;k++){
-        let dataMonth=dataImports.dataClients[k]['exp-month'];
-        if(parseInt(inputMonth) === parseInt(dataMonth))
-          return true;
+compareImport.isInputMonthEqualDataMonth = (inputMonth) => {
+    for (let k = 0; k < dataClients.length; k++) {
+        let dataMonth = dataClients[k]['exp-month'];
+        if (parseInt(inputMonth) === parseInt(dataMonth))
+            return true;
     }
     console.log("fallo el mes");
     return false;
 }
 
-compareImport.isInputYearEqualDataYear= (inputYear) => {
-    for(let k=0; k< dataImports.dataClients.length;k++){
-        let dataYear= dataImports.dataClients[k]['exp-year'];
+compareImport.isInputYearEqualDataYear = (inputYear) => {
+    for (let k = 0; k < dataClients.length; k++) {
+        let dataYear = dataClients[k]['exp-year'];
         console.log(inputYear);
         console.log(dataYear)
-        if(parseInt(inputYear) === parseInt(dataYear))
+        if (parseInt(inputYear) === parseInt(dataYear))
             return true;
     }
-    console.log("fallo el ano");
+    console.log("fallo el año");
     return false;
 }
 
 compareImport.compareCvvNumber = (getCvvNumber) => {
-    for(let k=0; k< dataImports.dataClients.length;k++){
-        let dataCvv=dataImports.dataClients[k].cvv;
-        if((parseInt(getCvvNumber) === dataCvv))
-          return true;
+    for (let k = 0; k < dataClients.length; k++) {
+        let dataCvv = dataClients[k].cvv;
+        if ((parseInt(getCvvNumber) === dataCvv))
+            return true;
     }
     console.log("fallo el cvv");
     return false;
 }
-module.exports = compareImport;
+
+if (typeof window === 'undefined') {
+    module.exports = compareImport;
+} else {
+    window.compareImport = compareImport;
+}
+
