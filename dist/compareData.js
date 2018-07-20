@@ -1,18 +1,17 @@
-"use strict";
+'use strict';
 
-var _dataClients = require("./dataClients");
-
-var dataImports = _interopRequireWildcard(_dataClients);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var compareImport = {};
-
+console.log(typeof window === 'undefined' ? 'undefined' : _typeof(window));
+if (typeof window === 'undefined') {
+    var _dataClients = require('./dataClients');
+}
 
 compareImport.compareName = function (getUserName) {
-    for (var k = 0; k < dataImports.dataClients.length; k++) {
-        var dataName = dataImports.dataClients[k].name;
-        if (dataName === getUserName) return true;
+    for (var k = 0; k < dataClients.length; k++) {
+        var dataName = dataClients[k].name.toLowerCase();
+        if (dataName === getUserName.toLowerCase()) return true;
     }
     console.log("fallo el nombre");
     return false;
@@ -20,16 +19,16 @@ compareImport.compareName = function (getUserName) {
 //export const compareName = 
 
 compareImport.creditNumber = function (numberCreditVaidateForLuhn) {
-    for (var k = 0; k < dataImports.dataClients.length; k++) {
-        var dataCreditNumber = dataImports.dataClients[k].creditNumber;
+    for (var k = 0; k < dataClients.length; k++) {
+        var dataCreditNumber = dataClients[k].creditNumber;
         if (numberCreditVaidateForLuhn.toString() === dataCreditNumber.toString()) return true;
     }
     console.log("fallo creditnumber");
     return false;
 };
 compareImport.isInputMonthEqualDataMonth = function (inputMonth) {
-    for (var k = 0; k < dataImports.dataClients.length; k++) {
-        var dataMonth = dataImports.dataClients[k]['exp-month'];
+    for (var k = 0; k < dataClients.length; k++) {
+        var dataMonth = dataClients[k]['exp-month'];
         if (parseInt(inputMonth) === parseInt(dataMonth)) return true;
     }
     console.log("fallo el mes");
@@ -37,22 +36,27 @@ compareImport.isInputMonthEqualDataMonth = function (inputMonth) {
 };
 
 compareImport.isInputYearEqualDataYear = function (inputYear) {
-    for (var k = 0; k < dataImports.dataClients.length; k++) {
-        var dataYear = dataImports.dataClients[k]['exp-year'];
+    for (var k = 0; k < dataClients.length; k++) {
+        var dataYear = dataClients[k]['exp-year'];
         console.log(inputYear);
         console.log(dataYear);
         if (parseInt(inputYear) === parseInt(dataYear)) return true;
     }
-    console.log("fallo el ano");
+    console.log("fallo el año");
     return false;
 };
 
 compareImport.compareCvvNumber = function (getCvvNumber) {
-    for (var k = 0; k < dataImports.dataClients.length; k++) {
-        var dataCvv = dataImports.dataClients[k].cvv;
+    for (var k = 0; k < dataClients.length; k++) {
+        var dataCvv = dataClients[k].cvv;
         if (parseInt(getCvvNumber) === dataCvv) return true;
     }
     console.log("fallo el cvv");
     return false;
 };
-module.exports = compareImport;
+
+if (typeof window === 'undefined') {
+    module.exports = compareImport;
+} else {
+    window.compareImport = compareImport;
+}

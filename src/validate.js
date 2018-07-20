@@ -23,12 +23,12 @@ validations.validateNumbersCreditCard = (dataValidate) => {
     console.log(dataValidate);
     console.log(typeof(dataValidate));
     const regexNumberCard = /^(?:4\d([\- ])?\d{6}\1\d{5}|(?:4\d{3}|5[1-5]\d{2}|6011)([\- ])?\d{4}\2\d{4}\2\d{4})$/; //Expresion regualar para validar
-    if (regexNumberCard.exec(dataValidate === null)) { // compara la expresion regular con el numero de tarjeta Ingresado.
-        console.log("EL numero de la tarjeta se ingreso incorrectamente")
-        return false;
-    } else {
+    if (regexNumberCard.exec(dataValidate) !== null) { // compara la expresion regular con el numero de tarjeta Ingresado.
         console.log("El numero de tarjeta esta ingresado correcto");
         return convertStringToArray(dataValidate);
+    } else {
+        console.log("EL numero de la tarjeta se ingreso incorrectamente")
+        return false;
     }
 }
 
@@ -104,4 +104,12 @@ validations.validateCvvNumber = (receiveCvvNumber) => {
         return true;
     }
 }
+
+
+
+
+if (typeof window === 'undefined'){
 module.exports= validations;
+}else{
+    window.validations  = validations;
+}

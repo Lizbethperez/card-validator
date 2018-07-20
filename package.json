@@ -1,29 +1,28 @@
 {
   "requires": true,
   "lockfileVersion": 1,
-  "dependencies": {},
+  "dependencies": {
+    "sweetalert": "^2.1.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0"
   },
   "name": "card-validator",
-  "description": "* **Integrantes de equipo** _Lizbeth Pérez. Karla Martínez_ \r * **Curso:** _JS DEEP DIVE: CREA TU PROPIA LIBRERÍA USANDO JAVASCRIPT_\r * **Unidad:** _Producto final_",
+  "description": "* **Integrantes de equipo** _Lizbeth Pérez. Karla Martínez_  * **Curso:** _JS DEEP DIVE: CREA TU PROPIA LIBRERÍA USANDO JAVASCRIPT_ * **Unidad:** _Producto final_",
   "version": "1.0.0",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lizbethperez/card-validator.git"
+    "url": "git+https://github.com/KarlaMartinez17/card-validator.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Lizbethperez/card-validator/issues"
+    "url": "https://github.com/KarlaMartinez17/card-validator/issues"
   },
-  "homepage": "https://github.com/Lizbethperez/card-validator#readme"
+  "homepage": "https://github.com/KarlaMartinez17/card-validator#readme"
 }
