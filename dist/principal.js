@@ -1,25 +1,25 @@
 'use strict';
 
-var _validate = require('./validate');
+if (typeof window === 'undefined') {
 
-var _validate2 = _interopRequireDefault(_validate);
-
-var _compareData = require('./compareData');
-
-var _compareData2 = _interopRequireDefault(_compareData);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+    var _validations = require('./validate');
+    var _compareImport = require('./compareData');
+}
 
 var compareAllData = function compareAllData(receiveNameForUser, reciveCreditNumberForUser, inputMonth, inputYear, receiveCvvForUser) {
-    if (!_validate2.default.validateUserName(receiveNameForUser) || !_validate2.default.validateNumbersCreditCard(reciveCreditNumberForUser) || !_validate2.default.validateMonth(inputMonth) || !_validate2.default.validateYear(inputYear) || !_validate2.default.validateCvvNumber(receiveCvvForUser)) {
+    if (!validations.validateUserName(receiveNameForUser) || !validations.validateNumbersCreditCard(reciveCreditNumberForUser) || !validations.validateMonth(inputMonth) || !validations.validateYear(inputYear) || !validations.validateCvvNumber(receiveCvvForUser)) {
         console.log("TARJETA INVALIDAooo");
         return;
     }
-    if (!_compareData2.default.compareName(receiveNameForUser) || !_compareData2.default.creditNumber(reciveCreditNumberForUser) || !_compareData2.default.isInputMonthEqualDataMonth(inputMonth) || !_compareData2.default.isInputYearEqualDataYear(inputYear) || !_compareData2.default.compareCvvNumber(receiveCvvForUser)) {
+    if (!compareImport.compareName(receiveNameForUser) || !compareImport.creditNumber(reciveCreditNumberForUser) || !compareImport.isInputMonthEqualDataMonth(inputMonth) || !compareImport.isInputYearEqualDataYear(inputYear) || !compareImport.compareCvvNumber(receiveCvvForUser)) {
         console.log("TARJETA INVALIDA");
         return;
     }
     console.log("TARJETA VALIDA");
     return true;
 };
-compareAllData('Orlando Garcia Mora', "4791672372586579", "01", "23", "883");
+if (typeof window === 'undefined') {
+    module.exports = compareAllData;
+} else {
+    window.compareAllData = compareAllData;
+}

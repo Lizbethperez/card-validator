@@ -1,5 +1,12 @@
-import validations from './validate'
-import compareImport from './compareData'
+if (typeof window === 'undefined'){
+
+
+const validations = require('./validate');
+const compareImport = require('./compareData');
+
+
+
+}
 
 const compareAllData = (receiveNameForUser, reciveCreditNumberForUser, inputMonth, inputYear, receiveCvvForUser) => {
     if (!validations.validateUserName(receiveNameForUser) || !validations.validateNumbersCreditCard(reciveCreditNumberForUser) || !validations.validateMonth(inputMonth) || !validations.validateYear(inputYear) || !validations.validateCvvNumber(receiveCvvForUser)){
@@ -14,4 +21,9 @@ const compareAllData = (receiveNameForUser, reciveCreditNumberForUser, inputMont
     return true;
       
 }
-compareAllData('Orlando Garcia Mora', "4791672372586579","01","23","883");
+if (typeof window === 'undefined'){
+    module.exports= compareAllData;
+}else{
+    window.compareAllData  = compareAllData;
+}
+    

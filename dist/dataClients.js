@@ -1,10 +1,7 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var dataClients = exports.dataClients = [{
-  'name': 'berenice Galvan Lopez',
+var dataClients = [{
+  'name': 'Berenice Galvan Lopez',
   'creditNumber': 4365775241079571,
   'cvv': 123,
   'exp-month': 12,
@@ -34,3 +31,9 @@ var dataClients = exports.dataClients = [{
   'exp-month': 11,
   'exp-year': 25
 }];
+
+if (typeof window === 'undefined') {
+  module.exports = dataClients;
+} else {
+  window.dataClients = dataClients;
+}
