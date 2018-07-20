@@ -22,4 +22,4 @@ var compareAllData = function compareAllData(receiveNameForUser, reciveCreditNum
     console.log("TARJETA VALIDA");
     return true;
 };
-compareAllData('Orlando Garcia Mora', "4791672372586579", "01", "23", "883");
+compareAllData('Orlando Garcia Mora', "4791672372586579#$%", "01", "23", "883");
