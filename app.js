@@ -15,7 +15,7 @@ $("#confirm-purchase").click(function(event){
     console.log(inputMonth);
     console.log(inputYear);
     
-    window.compareImport.compareCvvNumber(inputCvv);
+    compareAllData(inputName,inputCreditNumber,inputMonth,inputYear,inputCvv);
     
     
     
