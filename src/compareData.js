@@ -1,10 +1,7 @@
-
 const compareImport = {};
-console.log(typeof window);
 if (typeof window === 'undefined') {
     const dataClients = require('./dataClients');
 }
-
 
 compareImport.compareName = (getUserName) => {
     for (let k = 0; k < dataClients.length; k++) {
@@ -12,10 +9,9 @@ compareImport.compareName = (getUserName) => {
         if (dataName === getUserName.toLowerCase())
             return true;
     }
-    console.log("fallo el nombre");
     return false;
-
 }
+
 //export const compareName = 
 
 compareImport.creditNumber = (numberCreditVaidateForLuhn) => {
@@ -24,16 +20,15 @@ compareImport.creditNumber = (numberCreditVaidateForLuhn) => {
         if (numberCreditVaidateForLuhn.toString() === dataCreditNumber.toString())
             return true;
     }
-    console.log("fallo creditnumber");
     return false;
 }
+
 compareImport.isInputMonthEqualDataMonth = (inputMonth) => {
     for (let k = 0; k < dataClients.length; k++) {
         let dataMonth = dataClients[k]['exp-month'];
         if (parseInt(inputMonth) === parseInt(dataMonth))
             return true;
     }
-    console.log("fallo el mes");
     return false;
 }
 
@@ -45,7 +40,6 @@ compareImport.isInputYearEqualDataYear = (inputYear) => {
         if (parseInt(inputYear) === parseInt(dataYear))
             return true;
     }
-    console.log("fallo el año");
     return false;
 }
 
@@ -55,7 +49,6 @@ compareImport.compareCvvNumber = (getCvvNumber) => {
         if ((parseInt(getCvvNumber) === dataCvv))
             return true;
     }
-    console.log("fallo el cvv");
     return false;
 }
 
