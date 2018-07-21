@@ -8,12 +8,13 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0"
   },
-  "name": "card-validator",
+  "name": "card-validator-proyecto",
   "description": "* **Integrantes de equipo** _Lizbeth Pérez. Karla Martínez_  * **Curso:** _JS DEEP DIVE: CREA TU PROPIA LIBRERÍA USANDO JAVASCRIPT_ * **Unidad:** _Producto final_",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "build":"babel src --out-dir dist"
   },
   "repository": {
     "type": "git",
