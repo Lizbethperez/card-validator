@@ -9,10 +9,10 @@ const validations = require('../dist/validate');
       }
     });
     it('debería devolver false para el nombre Orlando Garcia 1234', () => {
-        if (validations.validateUserName('Orlando Garcia 123') !== true) {
-          console.error('✗ fail');
-        } else {
+        if (validations.validateUserName('Orlando Garcia 123') === false) {
           console.log('✓ ok');
+        } else {
+          console.error('✗ fail');
         }
       });
       it('debería devolver true para la tarjeta 4791672372586579', () => {
@@ -23,52 +23,52 @@ const validations = require('../dist/validate');
         }
       });
       it('debería devolver false parapara la tarjeta 4791672372586579', () => {
-          if (validations.validateNumbersCreditCard('479167aa725865794578') !== true) {
-            console.error('✗ fail');
-          } else {
+          if (validations.validateNumbersCreditCard('479167aa725865794578') === false) {
             console.log('✓ ok');
-          }
+              } else {
+                console.error('✗ fail');
+              }
         });
         it('debería devolver true para el mes 09', () => {
-            if (validations.validateNumbersCreditCard('09') !== true) {
+            if (validations.validateMonth('09') !== true) {
               console.error('✗ fail');
             } else {
               console.log('✓ ok');
             }
           });
           it('debería devolver false el mes g6', () => {
-              if (validations.validateNumbersCreditCard('g6') !== true) {
-                console.error('✗ fail');
-              } else {
+              if (validations.validateMonth('g6') === false) {
                 console.log('✓ ok');
+              } else {
+                console.error('✗ fail');
               }
             });
             it('debería devolver true para el ano 23', () => {
-                if (validations.validateNumbersCreditCard('23') !== true) {
+                if (validations.validateYear('23') !== true) {
                   console.error('✗ fail');
                 } else {
                   console.log('✓ ok');
                 }
               });
               it('debería devolver false para el ano', () => {
-                  if (validations.validateNumbersCreditCard('dd') !== true) {
-                    console.error('✗ fail');
-                  } else {
+                  if (validations.validateYear('dd') === false) {
                     console.log('✓ ok');
-                  }
+              } else {
+                console.error('✗ fail');
+              }
                 });
                 it('debería devolver true para el cvv, 835',() => {
-                    if (validations.validateNumbersCreditCard('835') !== true) {
+                    if (validations.validateCvvNumber('835') !== true) {
                       console.error('✗ fail');
                     } else {
                       console.log('✓ ok');
                     }
                   });
                   it('debería devolver false para el cvv f134', () => {
-                      if (validations.validateNumbersCreditCard('f134') !== true) {
-                        console.error('✗ fail');
-                      } else {
+                      if (validations.validateCvvNumber('f134') === false) {
                         console.log('✓ ok');
+                      } else {
+                        console.error('✗ fail');
                       }
                     });
 

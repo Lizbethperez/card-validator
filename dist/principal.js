@@ -3,9 +3,13 @@
 if (typeof window === 'undefined') {
     var _validations = require('./validate');
     var _compareImport = require('./compareData');
+    var data = require('./dataClients');
 }
 
-var compareAllData = function compareAllData(receiveNameForUser, reciveCreditNumberForUser, inputMonth, inputYear, receiveCvvForUser) {
+var compareAllData = function compareAllData(receiveNameForUser, reciveCreditNumberForUser, inputMonth, inputYear, receiveCvvForUser, dataClients) {
+
+    compareImport.setDataClients(dataClients);
+
     if (!validations.validateUserName(receiveNameForUser) || !validations.validateNumbersCreditCard(reciveCreditNumberForUser) || !validations.validateMonth(inputMonth) || !validations.validateYear(inputYear) || !validations.validateCvvNumber(receiveCvvForUser)) {
         return;
     }
