@@ -8,7 +8,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0"
   },
-  "name": "card-validator-proyecto",
+  "name": "card-validator-proyect-gdl",
   "description": "* **Integrantes de equipo** _Lizbeth Pérez. Karla Martínez_  * **Curso:** _JS DEEP DIVE: CREA TU PROPIA LIBRERÍA USANDO JAVASCRIPT_ * **Unidad:** _Producto final_",
   "version": "1.0.0",
   "main": "index.js",
