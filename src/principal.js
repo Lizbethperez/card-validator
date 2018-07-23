@@ -14,6 +14,7 @@ const compareAllData = (receiveNameForUser, reciveCreditNumberForUser, inputMont
     if (!compareImport.compareName(receiveNameForUser) || !compareImport.creditNumber(reciveCreditNumberForUser) || !compareImport.isInputMonthEqualDataMonth(inputMonth) || !compareImport.isInputYearEqualDataYear(inputYear) || !compareImport.compareCvvNumber(receiveCvvForUser)){
         return;
     }
+  
     return true;
       
 }

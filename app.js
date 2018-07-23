@@ -17,9 +17,11 @@ $("#confirm-purchase").click(function (event) {
 
 
     if (!compareAllData(inputName, inputCreditNumber, inputMonth, inputYear, inputCvv, dataClients)) {
+        console.log("Tarjeta Invalida");
         swal("TARJETA RECHAZADA", "Intente de nuevo", "error");
 
     } else {
+        console.log("Tarjeta Valida");
         swal("TARJETA APROBADA", "Gracias por su compra", "success");
     }
 
