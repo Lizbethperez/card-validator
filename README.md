@@ -151,3 +151,4 @@ Una tarjeta de crédito, está conformada por los siguientes componentes a part
 
 ## DEMO:
 
+![demo](/assets/image/demo.gif)
