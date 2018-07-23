@@ -11,7 +11,7 @@
   "name": "card-validator-proyect-gdl",
   "description": "* **Integrantes de equipo** _Lizbeth Pérez. Karla Martínez_  * **Curso:** _JS DEEP DIVE: CREA TU PROPIA LIBRERÍA USANDO JAVASCRIPT_ * **Unidad:** _Producto final_",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/principal.js",
   "scripts": {
     "test": "mocha",
     "build":"babel src --out-dir dist"

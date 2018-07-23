@@ -1,4 +1,58 @@
-# Valida datos de tarjetas de crédito
+# Valida datos de tarjetas de crédito.
+
+## Instrucciones para uso de la librería.
+
+To use this library install the next command in the terminal:
+
+* `npm install card-validator-proyect-gdl`
+
+Para utilizar esta librería es necesario instalar el siguiente comando en la terminal:
+
+* `npm install card-validator-proyect-gdl`
+
+#### Node.
+
+Use the following command in node:
+
+* `node dist/principal.js`
+
+Utiliza el siguiente comando en node:
+
+* `node dist/principal.js`
+
+
+#### Browser // Navegador.
+
+Make sure to include it in your HTML:
+
+* `<script src="dist/dataClients.js"></script>`
+* `<script src="dist/validate.js"></script>`
+* ` <script src="dist/compareData.js"></script>`
+* `<script src="dist/principal.js"></script>`
+
+Asegurate de incluir en tu HTML:
+
+* `<script src="dist/dataClients.js"></script>`
+* `<script src="dist/validate.js"></script>`
+* ` <script src="dist/compareData.js"></script>`
+* `<script src="dist/principal.js"></script>`
+
+#### For testing:
+
+Use the following command in the terminal:
+
+* `npm run test` ó 
+* `mocha test` 
+
+#### Para ejecutar el test:
+
+Utiliza en terminal el siguiente comando:
+
+* `npm run test` ó 
+* `mocha test` 
+
+*** 
+### Información acerca del equipo.
 
 * **Integrantes de equipo** _Lizbeth Pérez. Karla Martínez_ 
 * **Curso:** _JS DEEP DIVE: CREA TU PROPIA LIBRERÍA USANDO JAVASCRIPT_
@@ -26,21 +80,6 @@ El usuario debera ingresar:
 * `Fecha de vencimiento` _Mes y año_
 * `Código de seguridad` _De tres dígitos_
 * `Click en botón "pagar"` _Para realizar la transacción_
-
-***
-
-# Instrucciones para uso de la librería.
-
-AQUI DEBE HABER ALGO DE LAS LIBRERIAS Y ASI
-
-El plugin debe recibir una referencia a un elemento del DOM que contenga
-`<input>`s con los siguientes nombres (atributo `name`):
-
-* `cn` (Card Number): El número de la tarjeta de crédito
-* `exp` (Expiry Date): Fecha de expiración
-* `cvv` (Card Verification Value): Código de validación de 3 dígitos
-* `name`: Nombre completo como aparece en la tarjeta
-
 
 *** 
 
@@ -112,4 +151,3 @@ Una tarjeta de crédito, está conformada por los siguientes componentes a part
 
 ## DEMO:
 
-AQUI VA EL DEMO 
