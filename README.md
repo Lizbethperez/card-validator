@@ -1,4 +1,4 @@
-# Valida datos de tarjetas de crédito.
+# Validador de Tarjetas de Crédito
 
 Card-Validator es una librería que valida el número de tarjeta de crédito (usando algoritmo de Luhn), fecha de vencimiento, código de verificación (cvv) y nombre completo que aparece en la tarjeta.
 
