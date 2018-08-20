@@ -2,7 +2,8 @@
 
 Card-Validator es una librería que valida el número de tarjeta de crédito (usando algoritmo de Luhn), fecha de vencimiento, código de verificación (cvv) y nombre completo que aparece en la tarjeta.
 
-![card-validator-preview]
+![card-validator-preview](https://user-images.githubusercontent.com/37425706/44370597-88b3af80-a4a0-11e8-9b02-e084645f42eb.png)
+
 
 * **DESARROLLADO PARA:** _LABORATORIA_
 
