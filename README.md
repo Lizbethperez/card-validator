@@ -78,7 +78,7 @@ Utiliza en terminal el siguiente comando:
 
 *** 
 
-# Instrucciones para Usuario.
+## Instrucciones para Usuario.
 
 El usuario debera ingresar:
 
@@ -90,7 +90,7 @@ El usuario debera ingresar:
 
 *** 
 
-# Introducción.
+## Introducción.
 
 Casi todos alguna vez hemos utilizado alguna tarjeta de crédito para realizar una compra. 
 
@@ -99,7 +99,7 @@ Casi todos alguna vez hemos utilizado alguna tarjeta de crédito para realizar u
 Como sabes, estas tarjetas cuentan con ciertas numeraciones tales como el nombre del titular de la tarjeta (persona autorizada para dar uso de ella), la numeración principal que cuenta con 16 dígitos, la fecha de expiración contando con el mes y el año y un código de seguridad.
 En este reto crearemos un “validador de tarjetas de crédito” que ayudara a las empresas en linea a aceptar el pago de sus productos o servicios a través de este sistema.
 
-# Investigación.
+## Investigación.
 
 ¿Cuál es el método de validación de una Tarjeta de Crédito?
 
