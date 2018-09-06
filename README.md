@@ -4,8 +4,7 @@ Card-Validator es una librería que valida el número de tarjeta de crédito (us
 
 ![card-validator-preview](https://user-images.githubusercontent.com/37425706/44370597-88b3af80-a4a0-11e8-9b02-e084645f42eb.png)
 
-
-* **DESARROLLADO PARA:** _LABORATORIA_
+## Desarrollado para [Laboratoria](http://laboratoria.la)
 
 ## Instrucciones para uso de la librería.
 
